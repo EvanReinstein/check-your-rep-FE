@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Main from './views/Main';
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <Router>
+        <Main />
+    </Router>,
+     document.getElementById('root'));
 
-serviceWorker.unregister();
+
