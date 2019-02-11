@@ -10,10 +10,17 @@ const Rep = (props) => {
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={props.data.photoUrl} />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
+          <Card.Title>{props.data.name}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
+            {props.data.address.map((line) => {
+              return (
+              <div>
+                <p>{line.line1}</p>
+                <p>{line.line2}</p>
+                <p>{line.city}, {line.state} {line.zip}</p>
+              </div>
+              )
+            })}
           </Card.Text>
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
