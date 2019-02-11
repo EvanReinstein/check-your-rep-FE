@@ -10,3 +10,4 @@ body {
 /* Components */
 @import "./components/navbar.css";
 @import "./components/content.css";
+@import "./components/zipform.css";

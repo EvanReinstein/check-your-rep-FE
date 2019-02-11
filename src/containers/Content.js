@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import axios from 'axios';
 
 // Component Imports
 import ZipForm from '../components/ZipForm';
 import About from '../components/About';
+import Results from '../components/Results';
 
 class Content extends Component {
     state = {
@@ -30,7 +31,13 @@ class Content extends Component {
                 zipcode: zipcode
             }
         })
-        .then(res => {console.log(res.data.officials)})
+        .then(res => {
+            // console.log(res.data.officials);
+            const { officials } = res.data;
+            this.props.history.push('/your-results', {
+                state: {results: officials}
+            });
+        })
         .catch(err => {console.log(err)});
     }
 
@@ -39,6 +46,7 @@ class Content extends Component {
             <div className="content">
                 <Switch>
                     <Route path="/" exact render={props => <ZipForm {...props} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />}/>
+                    <Route path="/your-results" exact component={Results}/>
                     <Route path="/about" exact component={About}/>
                 </Switch>
             </div>
@@ -46,4 +54,4 @@ class Content extends Component {
     }
 }
 
-export default Content;
+export default withRouter(Content);

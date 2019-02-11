@@ -1,11 +1,14 @@
 import React from 'react';
 
+// Images
+import logo from '../images/branding.svg'
+
 const ZipForm = (props) => {
     return (
         <div className="zip-form">
-            <h3 className="title">Zipcode Form</h3>
+            <img src={logo} alt="Check Your Rep!" className="logo"/>
+            <p className="intro">Use our service to search for your local representatives and give them a piece of your mind!</p>
             <form className="search-form" action="post" onSubmit={props.handleSubmit}>
-                <label htmlFor="">Zipcode: </label>
                 <input
                 onInput={props.handleChange}
                 name="zipcode"
