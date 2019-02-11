@@ -10,7 +10,14 @@ const NavBar = () => {
                 </h1>
                 <ul className="links">
                     <li><NavLink className="link" to="/about"> About</NavLink></li>
+                    <li><NavLink className="link" to="/signup">Sign Up</NavLink></li>
+                    <li><NavLink className="link" to="/login">Log In</NavLink></li>
                 </ul>
+            </div>
+            <div className="hamburger-wrap">
+                <div className="hamburger">
+                    Hamburger
+                </div>
             </div>
         </nav>
     );

@@ -2,8 +2,8 @@ import React from 'react';
 
 const ZipForm = (props) => {
     return (
-        <div>
-            <h3>Zipcode Form</h3>
+        <div className="zip-form">
+            <h3 className="title">Zipcode Form</h3>
             <form className="search-form" action="post" onSubmit={props.handleSubmit}>
                 <label htmlFor="">Zipcode: </label>
                 <input
